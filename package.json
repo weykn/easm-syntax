@@ -1,0 +1,65 @@
+{
+"scripts": {
+  "compile": "tsc"
+},
+    "name": "easm",
+    "author": {
+        "email": "",
+        "name": ""
+    },
+    "publisher": "",
+    "displayName": "Echo assembly x64 syntax highlighting",
+    "description": "Syntax highlighting for Echo assembly x64",
+    "version": "1.0.0",
+    "icon": "icon/logo.png",
+    "engines": {
+        "vscode": "^1.59.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets"
+    ],
+    
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "license": "MIT",
+    
+    "keywords": [
+        "asm",
+        "easm",
+        "assembly",
+        "EASM",
+        "x64",
+        "x64 EASM"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "easm",
+                "path": "./snippets/snippets.json"
+            }
+        ],
+        "languages": [
+            {
+                "id": "easm",
+                "aliases": [
+                    "echo assembly x64",
+                    "easm"
+                ],
+                "extensions": [
+                    ".asm",
+                    ".easm"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "easm",
+                "scopeName": "source.asm",
+                "path": "./syntaxes/easm.tmLanguage.json"
+            }
+        ]}
+}

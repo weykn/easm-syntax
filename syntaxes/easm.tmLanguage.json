@@ -1,0 +1,93 @@
+{
+	"$schema": "",
+	"name": "easm x64 assembly",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#labels"
+		},
+		{
+			"include": "#assignments"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment",
+					"match": "(;)(.*)"
+				}
+			]
+		},
+		"strings": {
+			"name": "meta.preprocessor.string",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.nasm",
+					"match": "\\\\."
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.control.ins.asm",
+					"match": "(add|sub|mul|push.lit)"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<!\\w)(0x[0-9A-Fa-f]+)(?!\\w)"
+				},
+				{
+					"name": "constant.numeric",
+					"match": "(?<!\\w)(\\d+)(?!\\w)"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "storage.type.def.asm",
+					"match": "((db(?!(\\w+)))|(dw(?!(\\w+)))|(dd(?!(\\w+)))|(dq(?!(\\w+)))|resb|resd|resw)"
+				}
+			]
+		},
+		"labels": {
+			"patterns": [
+				{
+					"name": "variable.name.label.asm",
+					"match": "^\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*:"
+				}
+			]
+		},
+		"assignments": {
+			"patterns": [
+				{
+					"name": "variable.name.assignment.asm",
+					"match": "^\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*="
+				}
+			]
+		}
+	},
+	"scopeName": "source.asm"
+}
