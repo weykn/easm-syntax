@@ -22,6 +22,9 @@
 		},
 		{
 			"include": "#assignments"
+		},
+		{
+			"include": "#dollar"
 		}
 	],
 	"repository": {
@@ -34,13 +37,10 @@
 			]
 		},
 		"strings": {
-			"name": "meta.preprocessor.string",
-			"begin": "\"",
-			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.nasm",
-					"match": "\\\\."
+					"name": "string.quoted.double.json",
+					"match": "\"(\\\\.|[^\"])*\""
 				}
 			]
 		},
@@ -75,7 +75,7 @@
 		"labels": {
 			"patterns": [
 				{
-					"name": "variable.name.label.asm",
+					"name": "entity.name.function.label.asm",
 					"match": "^\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*:"
 				}
 			]
@@ -85,6 +85,14 @@
 				{
 					"name": "variable.name.assignment.asm",
 					"match": "^\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*="
+				}
+			]
+		},
+		"dollar": {
+			"patterns": [
+				{
+					"name": "constant.language.dollar.asm",
+					"match": "\\$"
 				}
 			]
 		}

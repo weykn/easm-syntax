@@ -1,5 +1,19 @@
 {
     "Easm":[
-        {}
+        {
+            "prefix": "easmhelloworld",
+            "body": [
+                "msg: db \"Hello World\", 0xA",
+                "len = $-msg",
+                "",
+                "push.sa msg",
+                "push.lit len",
+                "print",
+                "",
+                "push.z",
+                "exit"
+            ],
+            "description": "Hello world program"
+        }
     ]
 }
